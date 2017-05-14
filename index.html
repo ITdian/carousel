@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单的轮播图练习</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            border:none;
+            list-style: none;
+        }
+        body{
+            background: skyblue;
+        }
+        .box{
+            width: 600px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .oul{
+            width: 9999px;
+            position: absolute;
+            
+        }
+        .oul li{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="oul">
+        <li><img src="images/01.jpg" alt=""></li>
+        <li><img src="images/02.jpg" alt=""></li>
+        <li><img src="images/03.jpg" alt=""></li>
+        <li><img src="images/04.jpg" alt=""></li>
+        <li><img src="images/01.jpg" alt=""></li>
+        <li><img src="images/02.jpg" alt=""></li>
+    </ul>
+</div>
+<script>
+    window.onload = function () {
+        var oul = document.getElementsByClassName('oul');
+        var num  = 0;
+        console.log(oul);
+       setInterval(function () {
+            num -= 4;
+            num<=-1200?num=0:num;
+           oul[0].style.left = num +'px';
+        },100)
+    }
+</script>
+</body>
+</html>
